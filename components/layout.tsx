@@ -1,10 +1,29 @@
 import Head from "next/head";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-
-const name = "Aiden";
+import { SearchOnTheWayUp } from "../lib/etc";
 export const siteTitle = "next.js sample website";
+const gnbMenus = [
+  "General Health",
+  "Beauty",
+  "Hospitals & Doctors",
+  "Deals",
+  "Articles & Experts",
+];
+const fastMenus = ["About us", "Medical Team", "FAQ"] as const;
+const languages = [
+  "English",
+  "Russian",
+  "Chinese",
+  "Spanish",
+  "Indonesian",
+  "Portuguese",
+  "French",
+  "Vietnamese",
+  "Thai",
+];
+type FastMenus = typeof fastMenus[number];
 const Layout = ({
   children,
   home,
@@ -12,58 +31,91 @@ const Layout = ({
   children: React.ReactNode;
   home: boolean;
 }) => {
-  console.log(children);
+  const [isFastMenuOpen, setIsFastMenuOpen] = useState(false);
+  const [currentSelectedFastMenu, setCurrentSelectedFastMenu] =
+    useState<FastMenus>("About us");
+  const selectedFastMenu = (menu: FastMenus) => {
+    setCurrentSelectedFastMenu(menu);
+    setIsFastMenuOpen(false);
 
+    console.log(menu);
+    console.log(isFastMenuOpen);
+  };
   return (
-    <div className="sw-full group  mx-auto  w-1/2 ">
-      <div className="relative py-20 mt-20 w-full px-10 bg-slate-800  group-hover:opacity-100 mx-auto transition-all transition-duration: 1000ms ease-in-out rounded-lg shadow-slate-800 shadow-lg h-[40rem]">
-        <Head>
-          <meta
-            name="description"
-            content="Learn how to build a personal website using Next.js"
-          />
-          {/* 디스크립션, 사이트 소개글 */}
-          <meta
-            property="og:image"
-            content={`https://og-image.vercel.app/${encodeURI(
-              siteTitle
-            )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-          />
-          {/* 이미지, 아마도 sns복사 붙여넣기 시 나오는 오픈그래프 썸네일인듯 */}
-          <meta name="og:title" content={siteTitle} />
-          <meta name="twitter:card" content="summary_large_image" />
-        </Head>
-        <header>
-          {home ? (
-            <div className="flex justify-center flex-wrap ">
-              <Image
-                priority
-                src="/images/profile.jpeg"
-                className="rounded-full w-full"
-                height="144"
-                width="144"
-                alt={name}
-              />
-              <h1 className="w-full flex justify-center text-xl my-4 text-white text-5xl">
-                {name}
-              </h1>
+    <div className="bg-red-700">
+      <Head>
+        <title>icloudhospital</title>
+      </Head>
+      {/* 100프로 */}
+      <div className="bg-primary text-white">
+        {/* 컨테이너 */}
+        <div className="w-[1140px] mx-auto px-8 pt-6 relative ">
+          <h1 className="w-20 h-10 bg-red-800 absolute bottom-0">logo</h1>
+          {/* fast menu area */}
+          <div className="flex justify-end">
+            {/*SelectedFastMenu area*/}
+            <div className="relative flex w-28">
+              <div
+                className="flex justify-between w-full relative"
+                onClick={(e) => {
+                  const selecEl = e.target;
+                  setIsFastMenuOpen(true);
+                  const layerControll = (e) => {
+                    if (SearchOnTheWayUp(selecEl, e.target)) {
+                    } else {
+                      setIsFastMenuOpen(false);
+                      window.removeEventListener("click", layerControll);
+                    }
+                  };
+                  window.addEventListener("click", layerControll);
+                }}
+              >
+                <strong className="text-sm font-normal lg:hover:underline lg:hover:font-semibold cursor-pointer">
+                  {currentSelectedFastMenu}
+                </strong>
+                <span className="w-6 h-4 bg-red-700 absolute right-0">
+                  <image />
+                </span>
+              </div>
+              <ul
+                className={`${
+                  isFastMenuOpen ? "block" : "hidden"
+                } absolute top-4 mx-auto bg-white text-textDark  rounded-lg py-4 text-sm w-full`}
+              >
+                {fastMenus.map((menu, i) => (
+                  <li
+                    className="cursor-pointer px-3 py-2 lg:hover:bg-lightGray lg:hover:font-bold h-8"
+                    key={i}
+                    onClick={() => {
+                      selectedFastMenu(menu);
+                    }}
+                  >
+                    {menu}
+                  </li>
+                ))}
+              </ul>
             </div>
-          ) : (
-            <div className="text-slate-300">
-              <Link href="/">{name}</Link>
-            </div>
-          )}
-        </header>
-        <main className="text-slate-700 mt-8">{children}</main>
-        {!home && (
-          //   홈이 없다면
-          <div className="text-3xl absolute bottom-4 right-4 text-white">
-            <Link href="/">
-              <a>← Back to home</a>
-            </Link>
+            <p className="">
+              <Link href="">
+                <a className="text-white ml-7">How does it work?</a>
+              </Link>
+            </p>
           </div>
-        )}
+          {/* gnb area */}
+          <nav className="pl-28">
+            <ul className="flex space-x-7 text-md">
+              {gnbMenus.map((menu, i) => (
+                <li key={i}>
+                  <Link href="/">
+                    <a>{menu}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
+      {children}
     </div>
   );
 };
