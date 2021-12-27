@@ -9,7 +9,10 @@ module.exports = {
         primary: "#0F4C81",
         textDark: "#212529",
         textGrayDark: "#495057",
-        textGraylight: "#495057",
+        textGraylight: "##868E96",
+      },
+      bg: {
+        lightGray: "#EDF1F6",
       },
     },
   },
