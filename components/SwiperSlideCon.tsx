@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BackgroundSearch = () => {
+const SwiperSlideCon = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const BackgroundSearch = () => {
     );
 };
 
-export default BackgroundSearch;
+export default SwiperSlideCon;
