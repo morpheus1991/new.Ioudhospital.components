@@ -11,6 +11,7 @@ module.exports = {
         textGrayDark: "#495057",
         textGraylight: "##868E96",
         lightGray: "#EDF1F6",
+        gnbSelectedBg: "#2684ff",
       },
       maxWidth: {
         1600: "1600px",
