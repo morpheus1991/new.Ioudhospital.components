@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>icloudhospital</title>
       </Head>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </div>
   );
 }
