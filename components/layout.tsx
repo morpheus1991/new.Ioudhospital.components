@@ -27,7 +27,7 @@ type FastMenus = typeof fastMenus[number];
 type Languages = typeof languages[number];
 
 //레이아웃 연관 여백
-const desktopHeaderHeigth = 28; //rem
+const desktopHeaderHeigth = 24; //rem
 const mobileHeaderHeigth = 14; //rem
 
 const desktopFooterHeigth = 124; //rem
@@ -71,12 +71,37 @@ const Layout = ({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const openMenu = () => {
     setIsMobileMenuOpen(true);
+    document.querySelector("body").classList.add("overflow-y-hidden");
+    console.log(document.querySelector("body"));
   };
+
   const closeMenu = () => {
     setIsMobileMenuOpen(false);
+    document.querySelector("body").classList.remove("overflow-y-hidden");
   };
+
+  //resize overflow controll
+  (() => {
+    let timer;
+    window.addEventListener("resize", () => {
+      if (!timer) {
+        timer = setTimeout(function () {
+          timer = null;
+          if (window.innerWidth < 1027 && isMobileMenuOpen) {
+            document.querySelector("body").classList.add("overflow-y-hidden");
+          }
+          if (window.innerWidth > 1027) {
+            document
+              .querySelector("body")
+              .classList.remove("overflow-y-hidden");
+          }
+        }, 500);
+      }
+    });
+  })();
+
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className={`flex flex-col min-h-screen overflow-hidden`}>
       <Head>
         <title>icloudhospital</title>
         <meta charSet="utf-8" />
@@ -90,9 +115,9 @@ const Layout = ({
         <meta name="next-head-count" content="5" />
       </Head>
       {/* 100프로 */}
-      <header className="bg-primary text-white fixed w-full">
+      <header className="bg-primary text-white fixed w-full z-50">
         {/* 개발용 유틸 */}
-        <div className="fixed top-0 left-2">
+        <div className="fixed top-0 left-2 z-50">
           <div className="text-yellow-300">global</div>
           <div className="hidden sm:block text-yellow-300">sm</div>
           <div className="hidden md:block text-yellow-300">md</div>
@@ -102,8 +127,8 @@ const Layout = ({
         </div>
         {/* 개발용 유틸 종료 */}
         {/* desktop 컨테이너 */}
-        <div className="xl:w-[1140px] 2xl:w-[1280px] mx-auto px-8 relative lg:block hidden">
-          <div className="w-full mx-auto px-8 pt-6 ">
+        <div className="xl:w-[1140px] 2xl:w-[1280px] mx-auto lg:px-2 xl:px-8 relative lg:block hidden">
+          <div className="w-full mx-auto lg:px-4 xl:px-8 pt-4 ">
             <h1 className="w-20 h-10 absolute bottom-3">
               <Image src="/images/logo.png" width="190px" height="96px"></Image>
             </h1>
@@ -169,10 +194,10 @@ const Layout = ({
             </div>
           </div>
           {/* 컨테이너 */}
-          <div className="w-full mx-auto px-8 pt-6 relative flex justify-between flex-grow pb-2">
+          <div className="w-full mx-auto lg:px-4 xl:px-8 pt-4 relative flex justify-between flex-grow pb-2">
             {/* gnb area */}
             <nav className="pl-28 w-full flex items-stretch">
-              <ul className="flex space-x-7 text-md items-stretch">
+              <ul className="flex lg:space-x-5 xl:space-x-7 text-md items-stretch">
                 {gnbMenus.map((menu, i) => (
                   <li
                     key={i}
@@ -212,7 +237,7 @@ const Layout = ({
                       window.addEventListener("click", layerControll);
                     }}
                   >
-                    <strong className="text-sm font-normal lg:hover:underline lg:hover:font-semibold cursor-pointer text-white">
+                    <strong className="text-sm font-normal lg:hover:underline lg:hover:font-semibold cursor-pointer block text-white">
                       {currentSelectedLanguages}
                     </strong>
                     <span className="absolute right-0">
@@ -232,7 +257,7 @@ const Layout = ({
                   <ul
                     className={`${
                       isLanguegeOpen ? "block" : "hidden"
-                    } absolute top-4 mx-auto bg-white text-textDark  rounded-lg py-4 text-sm w-full`}
+                    } absolute top-8 mx-auto bg-white text-textDark  rounded-lg py-4 text-sm w-full`}
                   >
                     {languages.map((lang, i) => (
                       <li
@@ -255,7 +280,7 @@ const Layout = ({
           </div>
         </div>
         {/* mobile 컨테이너 */}
-        <div className=" flex justify-between bg-primary text-textDark lg:hidden items-stretch  pl-4">
+        <div className=" flex justify-between bg-primary text-textDark lg:hidden items-stretch  pl-4 fixed w-full">
           <h1 className="flex items-center">
             <Image src="/images/logo.png" width="64px" height="32px"></Image>
           </h1>
@@ -284,7 +309,7 @@ const Layout = ({
           ></div>
           {/* menus */}
           <div
-            className={`w-64 h-screen bg-gnbSubPrimary absolute top-0 right-0 translate-x-full transition-transform duration-1000 px-7 ${
+            className={`w-64 h-screen bg-gnbSubPrimary fixed top-0 right-0 translate-x-full transition-transform duration-1000 px-7 ${
               isMobileMenuOpen ? "translate-x-0" : ""
             }`}
           >
@@ -335,7 +360,7 @@ const Layout = ({
                 <ul
                   className={`${
                     isLanguegeOpen ? "block" : "hidden"
-                  } absolute top-4 mx-auto bg-white text-textDark  rounded-lg py-4 text-sm w-full`}
+                  } absolute top-14 mx-auto bg-white text-textDark  rounded-lg py-4 text-sm w-full`}
                 >
                   {languages.map((lang, i) => (
                     <li
@@ -430,7 +455,7 @@ const Layout = ({
               </div>
             </div>
             <div>
-              <ul className="flex absolute bottom-4 right-0 w-full space-x-2 sm:space-x-4 justify-center sm:justify-end">
+              <ul className="flex absolute bottom-4 right-0 w-full space-x-2 sm:space-x-4 justify-center lg:justify-end">
                 <li>
                   <Image
                     width="135px"
@@ -458,7 +483,7 @@ const Layout = ({
                   height="38px"
                 ></Image>
               </div>
-              <p className="sm:flex sm:items-center sm:justify-center ml-5 text-sm order-3 pt-1.5 sm:pt-0 sm:order-none md:w-full md:justify-center">
+              <p className="sm:flex sm:items-center sm:justify-center ml-5 md:ml-0 text-sm order-3 pt-1.5 sm:pt-0 sm:order-none md:w-full md:justify-center">
                 <span className="block sm:inline-block">
                   © 2021 CloudHospital Inc.
                 </span>
