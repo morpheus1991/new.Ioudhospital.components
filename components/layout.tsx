@@ -118,11 +118,11 @@ const Layout = ({
         <div className="w-[1140px] mx-auto px-8 pt-6 relative flex justify-between flex-grow">
           {/* 개발용 유틸 */}
 
-          <div className="fixed top-0 left-0">
-            <div className="">global</div>
-            <div className="hidden sm:block">sm</div>
-            <div className="hidden md:block">md</div>
-            <div className="hidden lg:block">lg</div>
+          <div className="fixed top-0 left-2">
+            <div className="text-yellow-300">global</div>
+            <div className="hidden sm:block text-yellow-300">sm</div>
+            <div className="hidden md:block text-yellow-300">md</div>
+            <div className="hidden lg:block text-yellow-300">lg</div>
           </div>
           {/* 개발용 유틸 종료 */}
 
