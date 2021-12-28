@@ -32,6 +32,7 @@ const Layout = ({
   children: React.ReactNode;
   home: boolean;
 }) => {
+  // desktop gnb controll
   const [isFastMenuOpen, setIsFastMenuOpen] = useState(false);
   const [currentSelectedFastMenu, setCurrentSelectedFastMenu] =
     useState<FastMenus>("About us");
@@ -43,16 +44,20 @@ const Layout = ({
   const selectedFastMenu = (menu: FastMenus) => {
     setCurrentSelectedFastMenu(menu);
     setIsFastMenuOpen(false);
-
-    console.log(menu);
-    console.log(isFastMenuOpen);
   };
-
   const selectedLanguage = (lang: Languages) => {
     setcurrentSelectedLanguages(lang);
     setIsLanguegeOpen(false);
   };
 
+  // mobile gnb controll
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const openMenu = () => {
+    setIsMobileMenuOpen(true);
+  };
+  const closeMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
   return (
     <div className="flex flex-col h-screen">
       <Head>
@@ -69,10 +74,23 @@ const Layout = ({
       </Head>
       {/* 100프로 */}
       <header className="bg-primary text-white">
-        {/* 컨테이너 */}
-        <div className="2xl:w-[1140px] mx-auto px-8 pt-6 relative">
-          <div className="w-full mx-auto px-8 pt-6 relative">
-            <h1 className="w-20 h-10 bg-red-800 absolute bottom-0">logo</h1>
+        {/* 개발용 유틸 */}
+
+        <div className="fixed top-0 left-2">
+          <div className="text-yellow-300">global</div>
+          <div className="hidden sm:block text-yellow-300">sm</div>
+          <div className="hidden md:block text-yellow-300">md</div>
+          <div className="hidden lg:block text-yellow-300">lg</div>
+          <div className="hidden xl:block text-yellow-300">xl</div>
+          <div className="hidden 2xl:block text-yellow-300">2xl</div>
+        </div>
+        {/* 개발용 유틸 종료 */}
+        {/* desktop 컨테이너 */}
+        <div className="xl:w-[1140px] mx-auto px-8 pt-6 relative lg:block hidden">
+          <div className="w-full mx-auto px-8 pt-6 ">
+            <h1 className="w-20 h-10 absolute bottom-3">
+              <Image src="/images/logo.png" width="190px" height="96px"></Image>
+            </h1>
             {/* fast menu area */}
             <div className="flex justify-end">
               {/*SelectedFastMenu area*/}
@@ -95,14 +113,24 @@ const Layout = ({
                   <strong className="text-sm font-normal lg:hover:underline lg:hover:font-semibold cursor-pointer">
                     {currentSelectedFastMenu}
                   </strong>
-                  <span className="w-6 h-4 bg-red-700 absolute right-0">
-                    <image />
+                  <span className="absolute right-0">
+                    <svg
+                      height="20"
+                      width="20"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                      focusable="false"
+                      className={`${isFastMenuOpen ? "rotate-180" : ""}`}
+                      fill="white"
+                    >
+                      <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
+                    </svg>
                   </span>
                 </div>
                 <ul
                   className={`${
                     isFastMenuOpen ? "block" : "hidden"
-                  } absolute top-4 mx-auto bg-white text-textDark  rounded-lg py-4 text-sm w-full`}
+                  } absolute top-4 mx-auto bg-white text-textDark  rounded-lg py-4 text-sm w-full z-10`}
                 >
                   {fastMenus.map((menu, i) => (
                     <li
@@ -126,32 +154,30 @@ const Layout = ({
           </div>
           {/* 컨테이너 */}
           <div className="w-full mx-auto px-8 pt-6 relative flex justify-between flex-grow">
-            {/* 개발용 유틸 */}
-
-            <div className="fixed top-0 left-2">
-              <div className="text-yellow-300">global</div>
-              <div className="hidden sm:block text-yellow-300">sm</div>
-              <div className="hidden md:block text-yellow-300">md</div>
-              <div className="hidden lg:block text-yellow-300">lg</div>
-            </div>
-            {/* 개발용 유틸 종료 */}
-
             {/* gnb area */}
             <nav className="pl-28 w-full flex items-stretch">
               <ul className="flex space-x-7 text-md items-stretch">
                 {gnbMenus.map((menu, i) => (
-                  <li key={i} className="flex items-end">
+                  <li
+                    key={i}
+                    className="flex items-stretch transition-all relative group opacity-80 hover:opacity-100"
+                  >
                     <Link href="/">
-                      <a className="whitespace-pre">{menu}</a>
+                      <a className="whitespace-pre flex items-center">{menu}</a>
                     </Link>
+                    <div className="absolute bottom-0 left-0 bg-white h-[3px]  w-0 group-hover:w-full transition-all duration-1000"></div>
                   </li>
                 ))}
               </ul>
             </nav>
             {/* languege select, search, login area */}
             <div className="flex items-center">
-              <button>
-                <span>srarch</span>
+              <button className="felx w-5 h-5 justify-center items-center">
+                <Image
+                  src="/images/search-nav-icon.png"
+                  width="18px"
+                  height="19px"
+                ></Image>
               </button>
               <nav className="flex items-center ml-12">
                 <div className="relative w-28">
@@ -173,8 +199,18 @@ const Layout = ({
                     <strong className="text-sm font-normal lg:hover:underline lg:hover:font-semibold cursor-pointer text-white">
                       {currentSelectedLanguages}
                     </strong>
-                    <span className="w-6 h-4 bg-red-700 absolute right-0">
-                      <image />
+                    <span className="absolute right-0">
+                      <svg
+                        height="20"
+                        width="20"
+                        viewBox="0 0 20 20"
+                        aria-hidden="true"
+                        focusable="false"
+                        className={`${isLanguegeOpen ? "rotate-180" : ""}`}
+                        fill="white"
+                      >
+                        <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
+                      </svg>
                     </span>
                   </div>
                   <ul
@@ -200,6 +236,108 @@ const Layout = ({
                 </button>
               </nav>
             </div>
+          </div>
+        </div>
+        {/* mobile 컨테이너 */}
+        <div className="bg-emerald-200 pl-40 text-textDark lg:hidden">
+          <h1>logo</h1>
+          <button>searchButton</button>
+          <button className="" onClick={openMenu}>
+            menus
+          </button>
+          {/* dim */}
+          <div
+            className={`w-screen h-screen left-0 top-0 bg-black  lg:hidden visible fixed transition-opacity duration-500  ${
+              isMobileMenuOpen ? "opacity-70 z-0" : "opacity-0 invisible"
+            }`}
+          ></div>
+          {/* menus */}
+          <div
+            className={`w-56 h-screen bg-emerald-300 absolute top-0 right-0 translate-x-full transition-transform duration-1000 ${
+              isMobileMenuOpen ? "translate-x-0" : ""
+            }`}
+          >
+            <nav className="">
+              {/* menus wrapper */}
+              <button className="right-0 top-0 absolute" onClick={closeMenu}>
+                close
+              </button>
+              {/* languege select */}
+              <div className="relative w-28">
+                <div
+                  className="flex justify-between w-full relative bg-red-300"
+                  onClick={(e) => {
+                    const selecEl = e.target;
+                    setIsLanguegeOpen(true);
+                    const layerControll = (e) => {
+                      if (SearchOnTheWayUp(selecEl, e.target)) {
+                      } else {
+                        setIsLanguegeOpen(false);
+                        window.removeEventListener("click", layerControll);
+                      }
+                    };
+                    window.addEventListener("click", layerControll);
+                  }}
+                >
+                  <strong className="text-sm font-normal lg:hover:underline lg:hover:font-semibold cursor-pointer text-white">
+                    {currentSelectedLanguages}
+                  </strong>
+                  <span className="absolute right-0">
+                    <svg
+                      height="20"
+                      width="20"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                      focusable="false"
+                      className={`${isLanguegeOpen ? "rotate-180" : ""}`}
+                      fill="white"
+                    >
+                      <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
+                    </svg>
+                  </span>
+                </div>
+                <ul
+                  className={`${
+                    isLanguegeOpen ? "block" : "hidden"
+                  } absolute top-4 mx-auto bg-white text-textDark  rounded-lg py-4 text-sm w-full`}
+                >
+                  {languages.map((lang, i) => (
+                    <li
+                      className={`${
+                        currentSelectedLanguages === lang
+                          ? "bg-gnbSelectedBg text-white"
+                          : ""
+                      } cursor-pointer px-3 py-2 lg:hover:bg-lightGray lg:hover:font-bold h-8`}
+                      key={i}
+                      onClick={() => {
+                        selectedLanguage(lang);
+                      }}
+                    >
+                      {lang}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                {/* gnb */}
+                <ul>
+                  {gnbMenus.map((menu) => (
+                    <li>
+                      <Link href="/">{menu}</Link>
+                    </li>
+                  ))}
+                </ul>
+                {/* fast Menu */}
+                <ul>
+                  {fastMenus.map((menu) => (
+                    <li>
+                      <Link href="/">{menu}</Link>
+                    </li>
+                  ))}
+                </ul>
+                <button>Join or Login</button>
+              </div>
+            </nav>
           </div>
         </div>
       </header>
