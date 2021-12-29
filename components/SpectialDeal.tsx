@@ -90,7 +90,7 @@ const SpectialDeal = () => {
                         <Link href="">
                             <a className="block">
                                 <div className="my-5 border border-gray-200 rounded-[1.5rem] hover:shadow-basic overflow-hidden">
-                                    <div className="relative h-[25vh]">
+                                    <div className="relative h-[190px]">
                                         <Image
                                             src={expert.img}
                                             alt={expert.name}

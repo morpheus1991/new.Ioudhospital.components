@@ -3,9 +3,9 @@ import LayoutCon from "./LayoutCon";
 
 const BackgroundSearch = () => {
     return (
-        <div className="bg-no-repeat sm:bg-right bg-center bg-looking-srh-bg py-[5.5%]">
+        <div className="bg-no-repeat sm:bg-right bg-center bg-looking-srh-bg h-[533px]">
             <div className="max-w-1240 sm:px-8 px-4 m-auto">
-                <div className="md:w-[60%] w-[90%]">
+                <div className="md:max-w-[800px]">
                     <h2 className="sm:text-4xl text-2xl font-bold mb-4 leading-7 sm:leading-10">
                         Are you aware of the best treatment options for your
                         condition?
@@ -14,18 +14,18 @@ const BackgroundSearch = () => {
                         Let us help you! We've helped thousands of patients
                         positively improve their lives.
                     </p>
-                </div>
-                <div className="relative sm:max-w-[800px] md:w-3/4 sm:mb-8 mb-8">
-                    <form>
-                        <input
-                            type="text"
-                            className="w-full sm:h-20 h-14 px-8 rounded-[3rem] border-gray-300 border placeholder:italic placeholder:text-gray-600 placeholder:text-16"
-                            placeholder="what are you looking for?"
-                        />
-                        <button className="sm:w-20 w-14 sm:h-20 h-14 absolute top-0 right-3 indent-[-9999px] bg-ico-blue-srh bg-no-repeat bg-[length:50%] bg-center">
-                            search
-                        </button>
-                    </form>
+                    <div className="relative sm:mb-8 mb-8">
+                        <form>
+                            <input
+                                type="text"
+                                className="w-full sm:h-20 h-14 px-8 rounded-[3rem] border-gray-300 border placeholder:italic placeholder:text-gray-600 placeholder:text-16"
+                                placeholder="what are you looking for?"
+                            />
+                            <button className="sm:w-20 w-14 sm:h-20 h-14 absolute top-0 right-3 indent-[-9999px] bg-ico-blue-srh bg-no-repeat bg-[length:32px] bg-center">
+                                search
+                            </button>
+                        </form>
+                    </div>
                 </div>
                 <ul className="flex flex-wrap">
                     <li className="mt-4 mr-4">
