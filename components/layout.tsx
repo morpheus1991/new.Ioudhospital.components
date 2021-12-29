@@ -420,7 +420,7 @@ const Layout = ({
         </div>
       </header>
       <main
-        className={`lg:pt-24 md:pt-14 pt-flex-grow bg-white lg:min-h-[calc(100vh-(96px+100px))] min-h-[calc(100vh-(56px+100px))] `}
+        className={`lg:pt-24 pt-14 pt-flex-grow bg-white lg:min-h-[calc(100vh-(96px+100px))] min-h-[calc(100vh-(56px+100px))] `}
       >
         {children}
       </main>
