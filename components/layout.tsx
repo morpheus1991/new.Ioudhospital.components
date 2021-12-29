@@ -420,7 +420,7 @@ const Layout = ({
         </div>
       </header>
       <main
-        className={`${desktopMainPaddingTop} ${mobileMainPaddingTop} pt-flex-grow bg-slate-500 ${desktopMainDefaultHeight} ${mobileMainDefaultHeight}`}
+        className={`${desktopMainPaddingTop} ${mobileMainPaddingTop} pt-flex-grow bg-white lg:min-h-[calc(100vh-(96px+100px))] ${desktopMainDefaultHeight} ${mobileMainDefaultHeight}`}
       >
         {children}
       </main>
