@@ -4,9 +4,9 @@ import LayoutCon from "./LayoutCon";
 const BackgroundSearch = () => {
     return (
         <div className="bg-no-repeat sm:bg-right bg-center bg-looking-srh-bg py-[5.5%]">
-            <LayoutCon>
+            <div className="max-w-1240 sm:px-8 px-4 m-auto">
                 <div className="md:w-[60%] w-[90%]">
-                    <h2 className="sm:text-4xl text-2xl font-bold mb-4">
+                    <h2 className="sm:text-4xl text-2xl font-bold mb-4 leading-7 sm:leading-10">
                         Are you aware of the best treatment options for your
                         condition?
                     </h2>
@@ -57,7 +57,7 @@ const BackgroundSearch = () => {
                         </Link>
                     </li>
                 </ul>
-            </LayoutCon>
+            </div>
         </div>
     );
 };

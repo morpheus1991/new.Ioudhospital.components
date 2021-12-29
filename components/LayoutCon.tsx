@@ -1,9 +1,8 @@
+import React from "react";
 
-import React, { ReactNode, ReactChild } from 'react';
+interface LayoutProps {}
 
-interface LayoutProps { }
-
-const LayoutCon = ({ children } : React.PropsWithChildren<LayoutProps>) => {
+const LayoutCon = ({ children }: React.PropsWithChildren<LayoutProps>) => {
     return <div className="max-w-1240 px-8 m-auto">{children}</div>;
 };
 
