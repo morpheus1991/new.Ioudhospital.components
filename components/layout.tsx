@@ -139,7 +139,7 @@ const Layout = ({
         </div>
         {/* 개발용 유틸 종료 */}
         {/* desktop 컨테이너 */}
-        <div className="xl:w-[1140px] 2xl:w-[1280px] mx-auto lg:px-2 xl:px-8 relative lg:block hidden">
+        <div className="xl:w-[1240px] mx-auto lg:px-2 xl:px-8 relative lg:block hidden">
           <div className="w-full mx-auto lg:px-4 xl:px-8 pt-4 ">
             <h1 className="w-20 h-10 absolute bottom-3">
               <Image src="/images/logo.png" width="190px" height="96px"></Image>
