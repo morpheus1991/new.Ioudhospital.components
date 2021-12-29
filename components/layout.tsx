@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { SearchOnTheWayUp } from "../lib/etc";
 export const siteTitle = "next.js sample website";
@@ -81,9 +81,9 @@ const Layout = ({
   };
 
   //resize overflow controll
-  (() => {
+  useEffect(() => {
     let timer;
-    window.addEventListener("resize", () => {
+    const resizeScrollControll = () => {
       if (!timer) {
         timer = setTimeout(function () {
           timer = null;
@@ -97,8 +97,12 @@ const Layout = ({
           }
         }, 500);
       }
-    });
-  })();
+    };
+    window.addEventListener("resize", resizeScrollControll);
+    return () => {
+      window.removeEventListener("resize", resizeScrollControll);
+    };
+  }, []);
 
   return (
     <div className={`flex flex-col min-h-screen overflow-hidden`}>
