@@ -396,8 +396,8 @@ const Layout = ({
               <div>
                 {/* gnb */}
                 <ul className="pt-24 flex flex-col space-y-4 text-white font-bold">
-                  {gnbMenus.map((menu) => (
-                    <li className="text-lg">
+                  {gnbMenus.map((menu, i) => (
+                    <li className="text-lg" key={i}>
                       <Link href="/">{menu}</Link>
                     </li>
                   ))}
@@ -405,8 +405,8 @@ const Layout = ({
                 <div className="bg-white w-full h-px my-6 opacity-40"></div>
                 {/* fast Menu */}
                 <ul className="flex flex-col space-y-2">
-                  {fastMenus.map((menu) => (
-                    <li className="opacity-80  font-bold text-white">
+                  {fastMenus.map((menu, i) => (
+                    <li className="opacity-80  font-bold text-white" key={i}>
                       <Link href="/">{menu}</Link>
                     </li>
                   ))}
@@ -420,7 +420,7 @@ const Layout = ({
         </div>
       </header>
       <main
-        className={`${desktopMainPaddingTop} ${mobileMainPaddingTop} pt-flex-grow bg-white lg:min-h-[calc(100vh-(96px+100px))] ${desktopMainDefaultHeight} ${mobileMainDefaultHeight}`}
+        className={`lg:pt-24 md:pt-14 pt-flex-grow bg-white lg:min-h-[calc(100vh-(96px+100px))] min-h-[calc(100vh-(56px+100px))] `}
       >
         {children}
       </main>
