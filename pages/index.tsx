@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <Layout home>
-        <p className="text-primary text-3xl">ddd</p>
+        <p className="text-primary text-3xl">contents</p>
       </Layout>
     </div>
   );

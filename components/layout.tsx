@@ -30,17 +30,25 @@ type Languages = typeof languages[number];
 const desktopHeaderHeigth = 24; //rem
 const mobileHeaderHeigth = 14; //rem
 
-const desktopFooterHeigth = 124; //rem
-const mobileFooterHeigth = 14; //rem
-
 const desktopHeaderHeigthPx = `${desktopHeaderHeigth * 4}px`; //px
 const mobileHeaderHeigthPx = `${mobileHeaderHeigth * 4}px`; //px
 
+// 아래는 계산된 식, 적용을 위해서는 해당 문자열을 쌩으로 넣어야 테일윈드에서 생성 되어보임,
+// 쌩으로 문자열 삽입후, 다시 해당 변수 템플릿 리터럴에 삽입하면 정상작동함;
+// 아마도 purge 문제로 예상됨,
 const desktopMainDefaultHeight = `lg:min-h-[calc(100vh-(${desktopHeaderHeigthPx}+100px))]`; //main hight clac
 const mobileMainDefaultHeight = `min-h-[calc(100vh-(${mobileHeaderHeigthPx}+100px))]`; //main hight clac
 
+console.log(desktopMainDefaultHeight);
+console.log(mobileMainDefaultHeight);
+
+// 아래는 계산된 식, 적용을 위해서는 해당 문자열을 쌩으로 넣어야 테일윈드에서 생성 되어보임,
+// 쌩으로 문자열 삽입후, 다시 해당 변수 템플릿 리터럴에 삽입하면 정상작동함;
+// 아마도 purge 문제로 예상됨,
 const desktopMainPaddingTop = `lg:pt-${desktopHeaderHeigth}`; //main padding-top (headerHeight)
 const mobileMainPaddingTop = `md:pt-${mobileHeaderHeigth}`; //main padding-top (headerHeight)
+console.log(desktopMainPaddingTop);
+console.log(mobileMainPaddingTop);
 
 const Layout = ({
   children,
@@ -286,7 +294,9 @@ const Layout = ({
         {/* mobile 컨테이너 */}
         <div className=" flex justify-between bg-primary text-textDark lg:hidden items-stretch  pl-4 fixed w-full">
           <h1 className="flex items-center">
-            <Image src="/images/logo.png" width="64px" height="32px"></Image>
+            <Link href="/">
+              <Image src="/images/logo.png" width="64px" height="32px"></Image>
+            </Link>
           </h1>
           <div className="flex">
             <button className="w-14 h-14 flex items-center justify-center">
@@ -410,11 +420,8 @@ const Layout = ({
         </div>
       </header>
       <main
-        className={`${desktopMainPaddingTop} ${mobileMainPaddingTop} pt-flex-grow bg-slate-500 ${desktopMainDefaultHeight} ${mobileMainDefaultHeight} `}
+        className={`${desktopMainPaddingTop} ${mobileMainPaddingTop} pt-flex-grow bg-slate-500 ${desktopMainDefaultHeight} ${mobileMainDefaultHeight}`}
       >
-        <div className="h-screen"></div>
-        <div className="h-screen"></div>
-
         {children}
       </main>
       <footer className="bg-textGrayDark min-h-[500px]">
