@@ -22,6 +22,7 @@ module.exports = {
       //
       fontSize: {
         "34px": "2.125rem",
+        "40px": "2.5rem",
       },
       backgroundImage: {
         "looking-srh-bg": "url('/images/common/bg-main.jpg')",
