@@ -3,11 +3,11 @@ import LayoutCon from "../LayoutCon";
 
 const Consultation = () => {
     return (
-        <section className="py-20 bg-bgaliceblue">
+        <section className="py-10 sm:py-20 bg-bgaliceblue ">
             <LayoutCon>
-                <div className="flex">
-                    <div className="flex-1">
-                        <h2 className="text-4xl pt-4 font-bold">
+                <div className="flex flex-col sm:flex-row -mt-20">
+                    <div className="sm:flex-1 order-2 sm:order-1">
+                        <h2 className="text-2xl sm:text-4xl pt-4 font-bold">
                             How online consultation
                         </h2>
                         <p className="text-xl">
@@ -16,7 +16,7 @@ const Consultation = () => {
                         </p>
                         <ol>
                             <li className="mt-6">
-                                <h3 className="text-xl font-bold before:content-[''] before:inline-block before:w-[18px] before:h-[18px] before:bg-ico-ch-1 before:bg-no-repeat before:bg-cover before:mr-4">
+                                <h3 className="relative pl-8 text-xl font-bold before:content-[''] before:absolute before:left-0 before:top-[3px] before:w-[18px] before:h-[18px] before:bg-ico-ch-1 before:bg-no-repeat before:bg-cover before:mr-4">
                                     1. Search
                                 </h3>
                                 <p>
@@ -25,7 +25,7 @@ const Consultation = () => {
                                 </p>
                             </li>
                             <li className="mt-6">
-                                <h3 className="text-xl font-bold before:content-[''] before:inline-block before:w-[18px] before:h-[18px] before:bg-ico-ch-6 before:bg-no-repeat before:bg-cover before:mr-4">
+                                <h3 className="relative pl-8 text-xl font-bold before:content-[''] before:absolute before:left-0 before:top-[3px] before:w-[18px] before:h-[18px] before:bg-ico-ch-6 before:bg-no-repeat before:bg-cover before:mr-4">
                                     2. Choose the right clinic/doctor
                                 </h3>
                                 <p>
@@ -34,7 +34,7 @@ const Consultation = () => {
                                 </p>
                             </li>
                             <li className="mt-6">
-                                <h3 className="text-xl font-bold before:content-[''] before:inline-block before:w-[18px] before:h-[18px] before:bg-ico-ch-7 before:bg-no-repeat before:bg-cover before:mr-4">
+                                <h3 className="relative pl-8 text-xl font-bold before:content-[''] before:absolute before:left-0 before:top-[3px] before:w-[18px] before:h-[18px] before:bg-ico-ch-7 before:bg-no-repeat before:bg-cover before:mr-4">
                                     3. Pay the nominal amount
                                 </h3>
                                 <p>
@@ -46,7 +46,7 @@ const Consultation = () => {
                                 </p>
                             </li>
                             <li className="mt-6">
-                                <h3 className="text-xl font-bold before:content-[''] before:inline-block before:w-[18px] before:h-[18px] before:bg-ico-ch-8 before:bg-no-repeat before:bg-cover before:mr-4">
+                                <h3 className="relative pl-8 text-xl font-bold before:content-[''] before:absolute before:left-0 before:top-[3px] before:w-[18px] before:h-[18px] before:bg-ico-ch-8 before:bg-no-repeat before:bg-cover before:mr-4">
                                     4. Receive online consultation
                                 </h3>
                                 <p>
@@ -56,11 +56,12 @@ const Consultation = () => {
                             </li>
                         </ol>
                     </div>
-                    <div className="relative flex-1 ml-40 rounded-[1rem] overflow-hidden shadow-[0_50px_100px_0px_rgba(59,67,092,0.2)]">
+                    <div className="relative sm:flex-1 order-1 sm:h-auto h-[65vw] lg:ml-40 sm:ml-5 rounded-[1rem] overflow-hidden shadow-[0_50px_100px_0px_rgba(59,67,092,0.2)]">
                         <Image
                             src="/images/beauty/consultation.jpg"
                             alt=""
                             layout="fill"
+                            objectFit="cover"
                             width={475}
                             height={700}
                             quality={100}

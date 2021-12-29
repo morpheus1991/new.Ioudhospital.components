@@ -6,6 +6,7 @@ import SwiperCore, { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import LayoutCon from "./LayoutCon";
+import TitleAndSeeAllBtnCon from "./TitleAndSeeAllBtnCon";
 
 SwiperCore.use([Navigation]);
 
@@ -77,56 +78,60 @@ const Responsive = {
 };
 
 const SpectialDeal = () => {
+    
+    const props = {
+        title: 'Special Deals',
+        btnName: 'doctor'
+    }
+
     return (
         <LayoutCon>
-            <h3 className="font-bold mb-8">World-Class Surgeons and Experts</h3>
-            <Swiper
-                breakpoints={Responsive}
-                navigation={true}
-                className="mySwiper "
-            >
-                {ExpertsArr.map((expert, i) => (
-                    <SwiperSlide>
-                        <Link href="">
-                            <a className="block">
-                                <div className="my-5 border border-gray-200 rounded-[1.5rem] hover:shadow-basic overflow-hidden">
-                                    <div className="relative h-[190px]">
-                                        <Image
-                                            src={expert.img}
-                                            alt={expert.name}
-                                            layout="fill"
-                                            objectFit="cover"
-                                            quality={100}
-                                        />
+            <TitleAndSeeAllBtnCon {...props} >
+                <Swiper
+                    breakpoints={Responsive}
+                    navigation={true}
+                    className="mySwiper"
+                >
+                    {ExpertsArr.map((expert, i) => (
+                        <SwiperSlide>
+                            <Link href="">
+                                <a className="block">
+                                    <div className="my-5 border border-gray-200 rounded-[1.5rem] hover:shadow-basic overflow-hidden">
+                                        <div className="relative h-[190px]">
+                                            <Image
+                                                src={expert.img}
+                                                alt={expert.name}
+                                                layout="fill"
+                                                objectFit="cover"
+                                                quality={100}
+                                            />
+                                        </div>
+                                        <div className="px-5 pt-2">
+                                            <span className="text-xs mb-2">
+                                                fdfsdfsdfsdf
+                                            </span>
+                                            <dl>
+                                                <dt className="mb-4 text-sm leading-5 font-bold">
+                                                    {expert.name}
+                                                </dt>
+                                                <dd className='relative pl-6 pb-1 text-[0.75rem] leading-4 text-textGraylight before:content-[""] before:absolute before:left-0 before:top-[-2px] before:bg-ico-home before:w-[22px] before:h-[22px] before:bg-contain before:bg-no-repeat before:bg-center '>
+                                                    {expert.home}
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <div className="py-1px mt-4 text-center bg-lightGray">
+                                            <span className="text-[0.75rem] font-bold">
+                                                lightGray
+                                            </span>
+                                            <strong className="block">$ 510</strong>
+                                        </div>
                                     </div>
-                                    <div className="px-5 pt-2">
-                                        <span className="text-xs mb-2">
-                                            fdfsdfsdfsdf
-                                        </span>
-                                        <dl>
-                                            <dt className="mb-4 text-sm leading-5 font-bold">
-                                                {expert.name}
-                                            </dt>
-                                            <dd className='relative pl-6 pb-1 text-[0.75rem] leading-4 text-textGraylight before:content-[""] before:absolute before:left-0 before:top-[-2px] before:bg-ico-home before:w-[22px] before:h-[22px] before:bg-contain before:bg-no-repeat before:bg-center '>
-                                                {expert.home}
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                    <div className="py-1px mt-4 text-center bg-lightGray">
-                                        <span className="text-[0.75rem] font-bold">
-                                            lightGray
-                                        </span>
-                                        <strong className="block">$ 510</strong>
-                                    </div>
-                                </div>
-                            </a>
-                        </Link>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-            <Link href="">
-                <a>See all Doctors</a>
-            </Link>
+                                </a>
+                            </Link>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </TitleAndSeeAllBtnCon>
         </LayoutCon>
     );
 };
