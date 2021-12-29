@@ -80,7 +80,7 @@ const Layout = ({
     document.querySelector("body").classList.remove("overflow-y-hidden");
   };
 
-  //resize overflow controll
+  //Adjust the scroll limit when resizing.
   useEffect(() => {
     let timer;
     const resizeScrollControll = () => {
@@ -102,7 +102,7 @@ const Layout = ({
     return () => {
       window.removeEventListener("resize", resizeScrollControll);
     };
-  }, []);
+  }, [isMobileMenuOpen]);
 
   return (
     <div className={`flex flex-col min-h-screen overflow-hidden`}>
