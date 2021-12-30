@@ -57,3 +57,18 @@ li {
     @apply shadow-basic rounded-r-3xl border-[3px] absolute right-16 rotate-180 left-auto top-8 w-[50px] h-[45px]  border-white bg-[url("/images/arrow-book-table-right.png")] bg-no-repeat bg-[length:30px_auto] bg-center bg-[#edf1f6];
   }
 }
+@layer components {
+  /* swiper btton styles */
+  .swiper-btn-circle-gray [class*="swiper-button"] {
+    @apply w-12 h-12 bg-contain;
+  }
+  .swiper-btn-circle-gray [class*="swiper-button"]::after {
+    @apply hidden;
+  }
+  .swiper-btn-circle-gray .swiper-button-next {
+    @apply right-2.5 bg-slider-btn-circle-gray-next;
+  }
+  .swiper-btn-circle-gray .swiper-button-prev {
+    @apply left-2.5 bg-slider-btn-circle-gray-prev;
+  }
+}
