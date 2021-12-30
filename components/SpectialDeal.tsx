@@ -20,8 +20,8 @@ const ExpertsArr = [
     },
     {
         img: "/images/img-spectial.png",
-        name: "Anu MEfdsfs",
-        home: "ADONIS Beauty Centre of Plastic Surgery and Cosmetology",
+        name: "Anu MEfdsfsAnu MEfdsfsAnu MEfdsfsAnu MEfdsfsAnu MEfdsfs",
+        home: "ADONIS Beauty Centre of Plastic Surgery and CosmetologyADONIS Beauty Centre of Plastic Surgery and Cosmetology",
         location: "Seoul, oooo",
         tag: ["tdrdfg", "tdssfdd", "fdsdfsdfsfdds", "dfsdfsf"],
     },
@@ -78,25 +78,24 @@ const Responsive = {
 };
 
 const SpectialDeal = () => {
-    
     const props = {
-        title: 'Special Deals',
-        btnName: 'doctor'
-    }
+        title: "Special Deals",
+        btnName: "doctor",
+    };
 
     return (
         <LayoutCon>
-            <TitleAndSeeAllBtnCon {...props} >
+            <TitleAndSeeAllBtnCon {...props}>
                 <Swiper
                     breakpoints={Responsive}
                     navigation={true}
-                    className="mySwiper"
+                    className="mySwiper swiper-btn-circle-gray"
                 >
                     {ExpertsArr.map((expert, i) => (
-                        <SwiperSlide>
+                        <SwiperSlide className="">
                             <Link href="">
                                 <a className="block">
-                                    <div className="my-5 border border-gray-200 rounded-[1.5rem] hover:shadow-basic overflow-hidden">
+                                    <div className="relative min-h-[380px] bg-red my-5 border border-gray-200 rounded-[1.5rem] hover:shadow-basic overflow-hidden">
                                         <div className="relative h-[190px]">
                                             <Image
                                                 src={expert.img}
@@ -111,19 +110,21 @@ const SpectialDeal = () => {
                                                 fdfsdfsdfsdf
                                             </span>
                                             <dl>
-                                                <dt className="mb-4 text-sm leading-5 font-bold">
+                                                <dt className="mb-4 text-sm leading-5 font-bold h-10 overflow-hidden">
                                                     {expert.name}
                                                 </dt>
-                                                <dd className='relative pl-6 pb-1 text-[0.75rem] leading-4 text-textGraylight before:content-[""] before:absolute before:left-0 before:top-[-2px] before:bg-ico-home before:w-[22px] before:h-[22px] before:bg-contain before:bg-no-repeat before:bg-center '>
+                                                <dd className='relative pl-6 max-h-8 overflow-hidden text-[0.75rem] leading-4 text-textGraylight before:content-[""] before:absolute before:left-0 before:top-[-2px] before:bg-ico-home before:w-[22px] before:h-[22px] before:bg-contain before:bg-no-repeat before:bg-center '>
                                                     {expert.home}
                                                 </dd>
                                             </dl>
                                         </div>
-                                        <div className="py-1px mt-4 text-center bg-lightGray">
+                                        <div className="absolute left-0 bottom-0 w-full py-1px text-center bg-lightGray">
                                             <span className="text-[0.75rem] font-bold">
                                                 lightGray
                                             </span>
-                                            <strong className="block">$ 510</strong>
+                                            <strong className="block">
+                                                $ 510
+                                            </strong>
                                         </div>
                                     </div>
                                 </a>

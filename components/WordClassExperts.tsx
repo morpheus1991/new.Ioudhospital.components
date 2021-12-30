@@ -12,53 +12,60 @@ SwiperCore.use([Navigation]);
 
 const ExpertsArr = [
     {
+        number: 1,
         img: "/images/experts.jpg",
         name: "Anu MEfdsfs",
         home: "ADONIS Beauty Centre of Plastic Surgery and Cosmetology",
         location: "Seoul, oooo",
-        tag: ["tdrdfg", "tdssfdd", "fdsdfsdfsfdds", "dfsdfsf"],
+        tag: "dfsdf,sdfsdf,sdfs,sdfdf,sdfsdfs,dfs,sdfsdfsdfsd",
     },
     {
+        number: 0,
         img: "/images/experts.jpg",
         name: "Anu MEfdsfs",
-        home: "ADONIS Beauty Centre of Plastic Surgery and Cosmetology",
+        home: "ADONIS Beaut",
         location: "Seoul, oooo",
-        tag: ["tdrdfg", "tdssfdd", "fdsdfsdfsfdds", "dfsdfsf"],
+        tag: "dfsdf,sdfsdf,sdfs,sdfdf,sdfsdfs,dfs,sdfsdfsdfsd",
     },
     {
+        number: 1,
         img: "/images/experts.jpg",
         name: "Anu MEfdsfs",
-        home: "ADONIS Beauty Centre of Plastic Surgery and Cosmetology",
+        home: "Cosmetology",
         location: "Seoul, oooo",
-        tag: ["tdrdfg", "tdssfdd", "fdsdfsdfsfdds", "dfsdfsf"],
+        tag: "dfsdf,sdfsdf,sdfs,sdfdf,sdfsdfs,dfs,sdfsdfsdfsd",
     },
     {
+        number: 1,
         img: "/images/experts.jpg",
         name: "Anu MEfdsfs",
         home: "ADONIS Beauty Centre of Plastic Surgery and Cosmetology",
         location: "Seoul, oooo",
-        tag: ["tdrdfg", "tdssfdd", "fdsdfsdfsfdds", "dfsdfsf"],
+        tag: "dfsdf,sdfsdf,sdfs,sdfdf,sdfsdfs,dfs,sdfsdfsdfsd",
     },
     {
+        number: 1,
         img: "/images/experts.jpg",
         name: "Anu MEfdsfs",
         home: "ADONIS Beauty Centre of Plastic Surgery and Cosmetology",
         location: "Seoul, oooo",
-        tag: ["tdrdfg", "tdssfdd", "fdsdfsdfsfdds", "dfsdfsf"],
+        tag: "dfsdf,sdfsdf,sdfs,sdfdf,sdfsdfs,dfs,sdfsdfsdfsd",
     },
     {
+        number: 1,
         img: "/images/experts.jpg",
         name: "Anu MEfdsfs",
         home: "ADONIS Beauty Centre of Plastic Surgery and Cosmetology",
         location: "Seoul, oooo",
-        tag: ["tdrdfg", "tdssfdd", "fdsdfsdfsfdds", "dfsdfsf"],
+        tag: "dfsdf,sdfsdf,sdfs,sdfdf,sdfsdfs,dfs,sdfsdfsdfsd",
     },
     {
+        number: 1,
         img: "/images/experts.jpg",
         name: "Anu MEfdsfs",
         home: "ADONIS Beauty Centre of Plastic Surgery and Cosmetology",
         location: "Seoul, oooo",
-        tag: ["tdrdfg", "tdssfdd", "fdsdfsdfsfdds", "dfsdfsf"],
+        tag: "dfsdf,sdfsdf,sdfs,sdfdf,sdfsdfs,dfs,sdfsdfsdfsd",
     },
 ];
 
@@ -78,11 +85,10 @@ const Responsive = {
 };
 
 const WordClassExperts = () => {
-
     const props = {
-        title: 'World-Class Surgeons and Experts',
-        btnName: 'doctor'
-    }
+        title: "World-Class Surgeons and Experts",
+        btnName: "doctor",
+    };
 
     return (
         <LayoutCon>
@@ -90,45 +96,61 @@ const WordClassExperts = () => {
                 <Swiper
                     breakpoints={Responsive}
                     navigation={true}
-                    className="mySwiper "
+                    className="mySwiper swiper-btn-circle-gray"
                 >
                     {ExpertsArr.map((expert, i) => (
                         <SwiperSlide>
-                            <div className="p-5 my-5 border border-gray-200 rounded-[1.5rem] hover:shadow-basic">
-                                <div className="relative w-[175px] h-[175px] m-auto rounded-full overflow-hidden">
-                                    <Image
-                                        src={expert.img}
-                                        alt={expert.name}
-                                        layout="fill"
-                                        objectFit="cover"
-                                        quality={100}
-                                    />
-                                </div>
-                                <div className="mt-4">
-                                    <dl>
-                                        <dt className="text-lg leading-5 font-bold mb-2">
-                                            {expert.name}
-                                        </dt>
-                                        <dd className='relative pl-6 pb-1 text-sm leading-4 text-textGraylight before:content-[""] before:absolute before:left-0 before:top-[-2px] before:bg-ico-home before:w-[22px] before:h-[22px] before:bg-contain before:bg-no-repeat before:bg-center '>
-                                            {expert.home}
-                                        </dd>
-                                        <dd className='relative pl-6 pb-1 text-sm leading-4 text-textGraylight before:content-[""] before:absolute before:left-0 before:top-[-2px] before:bg-ico-location before:w-[22px] before:h-[22px] before:bg-contain before:bg-no-repeat before:bg-center '>
-                                            {expert.location}
-                                        </dd>
-                                        <dd className='relative pl-6 pb-1 text-sm leading-4 text-textGraylight before:content-[""] before:absolute before:left-0 before:top-[-2px] before:bg-ico-specialty before:w-[22px] before:h-[22px] before:bg-contain before:bg-no-repeat before:bg-center whitespace-nowrap overflow-hidden text-ellipsis'>
-                                            {ExpertsArr[i].tag.map((v) => (
-                                                <Link href="">
-                                                    <a>{v}</a>
-                                                </Link>
-                                            ))}
-                                        </dd>
-                                    </dl>
-                                </div>
+                            <div className="relative p-5 sm:min-h-[450px] min-h-fit my-5 border border-gray-200 rounded-[1.5rem] hover:shadow-basic">
                                 <Link href="">
-                                    <a className="flex justify-center items-center sm:mt-12 mt-6 h-[40px] rounded-[3rem] border border-primary text-primary font-bold text-sm">
-                                        Ask a Question
+                                    <a className="block ">
+                                        <div className="relative w-[175px] h-[175px] m-auto rounded-full overflow-hidden">
+                                            <Image
+                                                src={expert.img}
+                                                alt={expert.name}
+                                                layout="fill"
+                                                objectFit="cover"
+                                                quality={100}
+                                            />
+                                        </div>
+                                        <div className="mt-4">
+                                            <dl>
+                                                <dt className="text-lg leading-5 font-bold mb-2">
+                                                    {expert.name}
+                                                </dt>
+                                                <dd className='relative pl-6 pb-1 text-sm leading-4 max-h-12 overflow-hidden text-textGraylight before:content-[""] before:absolute before:left-0 before:top-[-2px] before:bg-ico-home before:w-[22px] before:h-[22px] before:bg-contain before:bg-no-repeat before:bg-center '>
+                                                    {expert.home}
+                                                </dd>
+                                                <dd className='relative pl-6 pb-1 text-sm leading-4 text-textGraylight before:content-[""] before:absolute before:left-0 before:top-[-2px] before:bg-ico-location before:w-[22px] before:h-[22px] before:bg-contain before:bg-no-repeat before:bg-center '>
+                                                    {expert.location}
+                                                </dd>
+                                                <dd className='relative pl-6 pb-1 text-sm leading-4 text-textGraylight before:content-[""] before:absolute before:left-0 before:top-[-2px] before:bg-ico-specialty before:w-[22px] before:h-[22px] before:bg-contain before:bg-no-repeat before:bg-center whitespace-nowrap overflow-hidden text-ellipsis'>
+                                                    {expert.tag}
+                                                </dd>
+                                            </dl>
+                                        </div>
                                     </a>
                                 </Link>
+                                <div className="sm:mt-6 mt-6 sm:absolute left-0 right-0 w-[calc(100%-2rem)] m-auto bottom-[20px]">
+                                    {!expert.number && (
+                                        <div className="mb-2">
+                                            <strong>Fee: $120</strong>
+                                            <span className="block -mt-1 text-xs text-[#bcbebf]">
+                                                taxe dsfdfsfds
+                                            </span>
+                                        </div>
+                                    )}
+                                    <Link href="">
+                                        <a
+                                            className={`${
+                                                !expert.number
+                                                    ? "bg-primary text-white"
+                                                    : "border border-primary text-primary "
+                                            } flex justify-center items-center h-[40px] rounded-[3rem] font-bold text-sm`}
+                                        >
+                                            Ask a Question
+                                        </a>
+                                    </Link>
+                                </div>
                             </div>
                         </SwiperSlide>
                     ))}

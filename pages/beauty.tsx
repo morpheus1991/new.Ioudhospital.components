@@ -20,8 +20,10 @@ const Beauty = () => {
                     <li className="md:flex-1 flex-[1_1_40%] overflow-hidden">
                         <Link href="">
                             <a className="relative block md:h-[288px] h-[188px] bg-center grayscale hover:grayscale-0 overflow-hidden bg-cover bg-[url('/images/beauty/dental_bg.jpg')] bg-no-repeat ease-in duration-200 hover:scale-110 after:content-[''] after:absolute after:left-0 after:right-0 after: after: after:w-full after:h-full after:bg-blackbottom-shadow">
-                                <div className="absolute left-0 bottom-0 break-all z-10 sm:ml-8 mb-8 ml-4 mb-4 text-white ">
-                                    <strong className="lg:text-3xl text-xl">Denta</strong>
+                                <div className="absolute left-0 bottom-0 break-all z-10 sm:mx-8 mb-8 ml-4 mb-4 text-white ">
+                                    <strong className="lg:text-3xl text-xl">
+                                        deam tal dsff daf ing omg ofd sads
+                                    </strong>
                                     <span className="block text-20">
                                         12 Services
                                     </span>
@@ -32,8 +34,10 @@ const Beauty = () => {
                     <li className="md:flex-1 flex-[1_1_40%] overflow-hidden">
                         <Link href="">
                             <a className="relative block md:h-[288px] h-[188px] bg-center grayscale hover:grayscale-0 overflow-hidden bg-cover bg-[url('/images/beauty/dental_bg.jpg')] bg-no-repeat ease-in duration-200 hover:scale-110 after:content-[''] after:absolute after:left-0 after:right-0 after: after: after:w-full after:h-full after:bg-blackbottom-shadow">
-                                <div className="absolute left-0 bottom-0 break-all z-10 sm:ml-8 mb-8 ml-4 mb-4 text-white ">
-                                    <strong className="lg:text-3xl text-xl">Dental</strong>
+                                <div className="absolute left-0 bottom-0 break-all z-10 sm:mx-8 mb-8 ml-4 mb-4 text-white ">
+                                    <strong className="lg:text-3xl text-xl">
+                                        Dental
+                                    </strong>
                                     <span className="block text-20">
                                         12 Services
                                     </span>
@@ -44,8 +48,10 @@ const Beauty = () => {
                     <li className="md:flex-1 flex-[1_1_40%] overflow-hidden">
                         <Link href="">
                             <a className="relative block md:h-[288px] h-[188px] bg-center grayscale hover:grayscale-0 overflow-hidden bg-cover bg-[url('/images/beauty/dental_bg.jpg')] bg-no-repeat ease-in duration-200 hover:scale-110 after:content-[''] after:absolute after:left-0 after:right-0 after: after: after:w-full after:h-full after:bg-blackbottom-shadow">
-                                <div className="absolute left-0 bottom-0 break-all z-10 sm:ml-8 mb-8 ml-4 mb-4 text-white ">
-                                    <strong className="lg:text-3xl text-xl">Dental</strong>
+                                <div className="absolute left-0 bottom-0 break-all z-10 sm:mx-8 mb-8 ml-4 mb-4 text-white ">
+                                    <strong className="lg:text-3xl text-xl">
+                                        DentaDentaDentaDental
+                                    </strong>
                                     <span className="block text-20">
                                         12 Services
                                     </span>
@@ -56,8 +62,10 @@ const Beauty = () => {
                     <li className="md:flex-1 flex-[1_1_40%] overflow-hidden">
                         <Link href="">
                             <a className="relative block md:h-[288px] h-[188px] bg-center grayscale hover:grayscale-0 overflow-hidden bg-cover bg-[url('/images/beauty/dental_bg.jpg')] bg-no-repeat ease-in duration-200 hover:scale-110 after:content-[''] after:absolute after:left-0 after:right-0 after: after: after:w-full after:h-full after:bg-blackbottom-shadow">
-                                <div className="absolute left-0 bottom-0 break-all z-10 sm:ml-8 mb-8 ml-4 mb-4 text-white ">
-                                    <strong className="lg:text-3xl text-xl">Dental</strong>
+                                <div className="absolute left-0 bottom-0 break-all z-10 sm:mx-8 mb-8 ml-4 mb-4 text-white ">
+                                    <strong className="lg:text-3xl text-xl">
+                                        Dental
+                                    </strong>
                                     <span className="block text-20">
                                         12 Services
                                     </span>

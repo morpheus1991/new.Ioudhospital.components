@@ -44,6 +44,10 @@ module.exports = {
                 "ico-ch-7": "url('/images/icon/ico-choose-us07.png')",
                 "ico-ch-8": "url('/images/icon/ico-choose-us08.png')",
                 "ico-blue-arrow": "url('/images/common/arrow-down-blue.png')",
+                "slider-btn-circle-gray-next":
+                    "url('/images/common/slider-btn-circle-gray-next.png')",
+                "slider-btn-circle-gray-prev":
+                    "url('/images/common/slider-btn-circle-gray-prev.png')",                
                 "blackbottom-shadow":
                     "linear-gradient(to bottom, #0000, rgba(0, 0, 0, 0.5))",
             },
