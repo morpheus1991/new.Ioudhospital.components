@@ -11,7 +11,7 @@ const mh = () => {
       <ChooseCountry></ChooseCountry>
       <QuestionsAnswer></QuestionsAnswer>
       <ArticlesAndNews></ArticlesAndNews>
-      {/* <WordClassExperts></WordClassExperts> */}
+      <WordClassExperts></WordClassExperts>
     </Layout>
   );
 };

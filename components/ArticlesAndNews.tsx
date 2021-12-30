@@ -38,14 +38,14 @@ const datas: Datas = [
 SwiperCore.use([Navigation]);
 const ArticlesAndNews = () => {
   return (
-    <div>
-      <div className="max-w-[1320px] mx-auto px-4 xl:px-0">
+    <div className="bg-[#ecf1f6] pt-16">
+      <div className="max-w-[1320px] mx-auto px-4 xl:px-0 relative">
         {/* text area */}
         <div>
           <h2 className="text-2xl md:text-34px font-bold">
             Global Healthcare Articles & News
           </h2>
-          <p className="text-sm md:text-xl mt-2.5">
+          <p className="text-sm md:text-xl mt-2.5 max-w-2xl">
             <span className="inline">
               Learn more about why millions of people decide to travel abroad
               for their medical needs
@@ -53,7 +53,7 @@ const ArticlesAndNews = () => {
           </p>
         </div>
         {/* slide area */}
-        <div className="GlobalHealthcareArticlesAndNews py-20">
+        <div className="GlobalHealthcareArticlesAndNews pt-20 mg:pb-20 -translate-y-20">
           <Swiper
             spaceBetween={18}
             slidesPerView={2}
@@ -93,6 +93,11 @@ const ArticlesAndNews = () => {
               </div>
             ))}
           </Swiper>
+        </div>
+        <div className="flex md:hidden justify-center absolute left-0 right-0 mx-auto bottom-7">
+          <button className="bg-white border text-gnbSubPrimary border-primary rounded-3xl w-52  text-md flex justify-center items-center h-11 px-4">
+            See all Articles & News
+          </button>
         </div>
       </div>
     </div>

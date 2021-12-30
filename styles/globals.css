@@ -3,12 +3,57 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap");
+
 * {
   font-family: "Roboto", sans-serif;
 }
+
 .translate-reverse-y-hlaf {
   transform: translateY(-50%);
 }
+
 li {
   list-style: none;
+}
+
+@layer components {
+  .GlobalHealthcareArticlesAndNews .swiper-button-next {
+  }
+  .GlobalHealthcareArticlesAndNews .swiper-wrapper > .swiper-slide {
+    @apply shadow-basic mb-4 rounded-xl overflow-hidden;
+  }
+  .GlobalHealthcareArticlesAndNews .swiper.swiper-initialized {
+    @apply relative pt-16;
+  }
+  .GlobalHealthcareArticlesAndNews
+    .swiper.swiper-initialized
+    .swiper-button-next {
+    @apply shadow-basic rounded-r-3xl border-[3px] absolute right-2 rotate-0 left-auto top-8 w-[50px] h-[45px]  border-white bg-[url("/images/arrow-book-table-right.png")] bg-no-repeat bg-[length:30px_auto] bg-center bg-[#edf1f6];
+  }
+  .GlobalHealthcareArticlesAndNews
+    .swiper.swiper-initialized
+    .swiper-button-next:before {
+    @apply hidden;
+  }
+  .GlobalHealthcareArticlesAndNews
+    .swiper.swiper-initialized
+    .swiper-button-next:after {
+    @apply hidden;
+  }
+  .GlobalHealthcareArticlesAndNews
+    .swiper.swiper-initialized
+    .swiper-button-prev:before {
+    @apply hidden;
+  }
+
+  .GlobalHealthcareArticlesAndNews
+    .swiper.swiper-initialized
+    .swiper-button-prev:after {
+    @apply hidden;
+  }
+  .GlobalHealthcareArticlesAndNews
+    .swiper.swiper-initialized
+    .swiper-button-prev {
+    @apply shadow-basic rounded-r-3xl border-[3px] absolute right-16 rotate-180 left-auto top-8 w-[50px] h-[45px]  border-white bg-[url("/images/arrow-book-table-right.png")] bg-no-repeat bg-[length:30px_auto] bg-center bg-[#edf1f6];
+  }
 }
