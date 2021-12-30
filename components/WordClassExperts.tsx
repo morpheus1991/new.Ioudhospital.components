@@ -96,10 +96,10 @@ const WordClassExperts = () => {
                 <Swiper
                     breakpoints={Responsive}
                     navigation={true}
-                    className="mySwiper swiper-btn-circle-gray"
+                    className="mySwiper swiper-btn-circle-gray "
                 >
                     {ExpertsArr.map((expert, i) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={i}>
                             <div className="relative p-5 sm:min-h-[450px] min-h-fit my-5 border border-gray-200 rounded-[1.5rem] hover:shadow-basic">
                                 <Link href="">
                                     <a className="block ">

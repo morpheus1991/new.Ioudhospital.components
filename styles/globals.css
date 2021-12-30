@@ -72,3 +72,15 @@ li {
     @apply left-2.5 bg-slider-btn-circle-gray-prev;
   }
 }
+
+@layer components {
+
+  .swiper-grid .swiper-wrapper{
+    @apply flex-wrap flex-col h-[330px] sm:h-[330px]  
+  }
+  .swiper-grid .swiper-slide{
+    @apply h-[60px];
+    /* height: 10px !important */
+  }  
+
+}

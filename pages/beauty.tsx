@@ -9,6 +9,8 @@ import WhatWeOffer from "../components/WhatWeOffer";
 import WordClassExperts from "../components/WordClassExperts";
 import Consultation from "../components/Beauty/Consultation";
 import Layout from "../components/layout";
+import ArticlesAndNews from "../components/ArticlesAndNews";
+import QuestionsAnswer from "../components/QuestionsAnswer";
 
 const Beauty = () => {
     return (
@@ -91,6 +93,8 @@ const Beauty = () => {
                 </LayoutCon>
                 <SpectialDeal />
                 <WordClassExperts />
+                <ArticlesAndNews />
+                <QuestionsAnswer/>
                 <WhatWeOffer />
                 <Consultation />
             </div>
