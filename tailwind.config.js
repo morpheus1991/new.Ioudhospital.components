@@ -57,6 +57,7 @@ module.exports = {
         basic: "0 4px 15px 0 rgb(0 0 0 / 10%)",
         "3xl":
           "-23px 23px 46px rgb(209 209 209 / 20%), 23px -23px 46px rgb(209 209 209 / 20%), -23px -23px 46px rgb(255 255 255 / 90%), 23px 23px 58px rgb(209 209 209 / 90%), inset 1px 1px 2px rgb(255 255 255 / 30%), inset -1px -1px 2px rgb(209 209 209 / 50%)",
+        gnbSubPrimary: "0 8px 15px 0 rgb(31 117 232 / 30%)",
       },
     },
     plugins: [],

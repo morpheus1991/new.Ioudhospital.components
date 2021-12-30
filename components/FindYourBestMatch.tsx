@@ -124,7 +124,7 @@ const datas: Datas = [
 const FindYourBestMatch = () => {
   return (
     <div>
-      <div>
+      <div className=" lg:w-[1240px] lg:mx-auto pt-14">
         <h2 className="text-2xl md:text-34px font-bold">
           Find Your Best Match
         </h2>
@@ -136,7 +136,7 @@ const FindYourBestMatch = () => {
         </p>
       </div>
       <div>
-        <div className=" pt-20 mg:pb-20 -translate-y-20">
+        <div className=" pt-20 mg:pb-20 -translate-y-20 mt-12">
           <Swiper
             spaceBetween={14}
             slidesPerView={7}
@@ -167,7 +167,7 @@ const FindYourBestMatch = () => {
             {datas.map((item, i) => (
               <div className="" key={i}>
                 <SwiperSlide>
-                  <div className="w-full bg-white flex flex-col mb-4 border rounded-3xl border-gray-200 overflow-hidden">
+                  <div className="w-full bg-white flex flex-col mb-4 border rounded-3xl border-gray-200 overflow-hidden hover:shadow-basic cursor-pointer">
                     <Link href="/">
                       <div>
                         {/* 이미지 영역 */}
@@ -207,7 +207,9 @@ const FindYourBestMatch = () => {
                           </p>
                           <p className="text-md font-bold flex items-center text-blue-500">
                             <span className="w-5 h-5 bg-[url('/images/ic-b-specialty.png')] bg-[length:22px_16px] bg-[center_top_0.05rem] bg-no-repeat"></span>
-                            <span className=" ">{item.specialties}</span>
+                            <span className="overflow-hidden w-full whitespace-nowrap text-ellipsis">
+                              {item.specialties.join(" ")}
+                            </span>
                           </p>
                           {item.onlineConsultation.service ? (
                             <p className="mt-1">
@@ -222,7 +224,7 @@ const FindYourBestMatch = () => {
                         </div>
                       </div>
                     </Link>
-                    <div className="flex justify-center space-x-2 p-4">
+                    <div className="flex justify-center space-x-2 p-4 leading-4">
                       {item.onlineConsultation.service ? (
                         <button className="text-sm min-w-[calc(50%-6px)] w-full h-12 px-4 rounded-3xl bg-primary font-bold text-white">
                           Online Consultation
@@ -237,6 +239,11 @@ const FindYourBestMatch = () => {
               </div>
             ))}
           </Swiper>
+          <div className="flex justify-center items-center mt-11">
+            <button className="w-72 text-2xl font-bold text-white  bg-gnbSubPrimary h-20 rounded-full lg:hover:shadow-gnbSubPrimary transition-all duration-300">
+              Find Your Best Match
+            </button>
+          </div>
         </div>
       </div>
     </div>

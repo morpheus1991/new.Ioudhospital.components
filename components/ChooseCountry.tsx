@@ -92,24 +92,6 @@ const ChooseCountry = () => {
             <span className="inline md:block"> wherever you are.</span>
           </p>
         </div>
-        {/* 12 */}
-        {/* <p className="text-xs">text</p> */}
-        {/* 14 */}
-        {/* <p className="text-sm">text</p> */}
-        {/* 16 */}
-        {/* <p className="text-md">text</p> */}
-        {/* 18 */}
-        {/* <p className="text-lg">text</p> */}
-        {/* 20 */}
-        {/* <p className="text-xl">text</p> */}
-        {/* 24 */}
-        {/* <p className="text-2xl">text</p> */}
-        {/* 30 */}
-        {/* <p className="text-3xl">text</p> */}
-        {/* 36 */}
-        {/* <p className="text-4xl">text</p> */}
-        {/* 36 */}
-        <p className="text-5xl">text</p>
         <ul className="  flex flex-wrap  justify-between  md:px-0 mt-5 lg:w-[1020px] mx-auto">
           {data.map((item, i) => {
             if (i < limit) {
