@@ -28,7 +28,7 @@ const whatWeOfferData = [
 const WhatWeOffer = () => {
     return (
         <LayoutCon>
-            <h3 className="text-xl sm:text-3xl mb-8 sm:mb-4 font-bold">
+            <h3 className="text-xl sm:text-3xl mb-8 sm:mb-10 font-bold">
                 What we Offer
             </h3>
             <ul>

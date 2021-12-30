@@ -4,11 +4,26 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap");
 * {
-  font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 .translate-reverse-y-hlaf {
-  transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 li {
-  list-style: none;
+    list-style: none;
+}
+@layer components {
+    /* swiper btton styles */
+    .swiper-btn-circle-gray [class*="swiper-button"] {
+        @apply w-12 h-12 bg-contain;
+    }
+    .swiper-btn-circle-gray [class*="swiper-button"]::after {
+        @apply hidden;
+    }
+    .swiper-btn-circle-gray .swiper-button-next {
+        @apply right-2.5 bg-slider-btn-circle-gray-next;
+    }
+    .swiper-btn-circle-gray .swiper-button-prev {
+        @apply left-2.5 bg-slider-btn-circle-gray-prev;
+    }
 }
