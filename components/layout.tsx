@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { SearchOnTheWayUp } from "../lib/etc";
+import FixNav from "../components/FixNav";
 export const siteTitle = "next.js sample website";
 const gnbMenus = [
   "General Health",
@@ -564,6 +565,7 @@ const Layout = ({
           </div>
         </div>
       </footer>
+      <FixNav/>
     </div>
   );
 };

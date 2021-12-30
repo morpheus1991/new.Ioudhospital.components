@@ -6,6 +6,7 @@ import LayoutCon from "../components/LayoutCon";
 import WhatWeOffer from "../components/WhatWeOffer";
 import WordClassExperts from "../components/WordClassExperts";
 import WhatChooseuse from "../components/WhatChooseuse";
+import FixNav from "../components/FixNav";
 
 const Home = () => {
     return (
