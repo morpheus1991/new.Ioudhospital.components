@@ -1,5 +1,0 @@
-@layer components {
-  .GlobalHealthcareArticlesAndNews .swiper-button-next {
-    @apply bg-blue-500 w-40;
-  }
-}
